@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EBSS Web Studio - Premium Web Design & Development</title>
     <meta name="description" content="EBSS Web Studio - Premium web design and development services. We craft beautiful, powerful websites that engage your audience and drive real business results.">
-    <meta name="keywords" content="web design, web development, e-commerce, optimization, Las Vegas, website design">
+    <meta name="keywords" content="web design, web development, e-commerce, optimization, Las Vegas">
     <meta name="author" content="EBSS Web Studio">
     <meta name="theme-color" content="#e73c7e">
     <meta name="robots" content="index, follow">
@@ -31,12 +31,97 @@
         gtag('js', new Date());
         gtag('config', 'G-XXXXXXXXXX');
     </script>
+
+    <style>
+        /* Mobile Menu Styles */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: #1a1a1a;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: #1a1a1a;
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+
+        .nav-links.mobile-open {
+            display: flex !important;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.95);
+                padding: 20px;
+                gap: 10px;
+                width: 100%;
+                z-index: 99;
+            }
+
+            .nav-links a {
+                width: 100%;
+                text-align: center;
+                padding: 12px 20px;
+            }
+
+            header {
+                padding: 1rem 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.2rem;
+            }
+
+            .menu-toggle {
+                font-size: 20px;
+            }
+
+            .nav-links {
+                top: 50px;
+                padding: 15px;
+            }
+
+            .nav-links a {
+                padding: 10px 15px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
     <header>
         <nav class="container">
             <a href="https://ebssweb.com" class="logo">EBSS Web Studio</a>
+            <button class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <ul class="nav-links">
                 <li><a href="#services">Services</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
@@ -168,7 +253,7 @@
         <div class="container">
             <h2 class="section-title">Get In Touch</h2>
             <div class="contact-content">
-                <div class="contact-form">
+                <div class="contact-form-centered">
                     <form id="contactForm">
                         <div class="form-group">
                             <input type="text" placeholder="Your Name" required>
@@ -182,13 +267,6 @@
                         <button type="submit" class="btn btn-primary">Send Message</button>
                     </form>
                 </div>
-                <div class="contact-info">
-                    <h3>Contact Information</h3>
-                    <p><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="95fcfbf3fad5f0f7e6e6e6e1e0f1fcfabbf6faf8">[email&#160;protected]</a></p>
-                    <p><strong>Phone:</strong> (702) 555-0123</p>
-                    <p><strong>Address:</strong> Las Vegas, Nevada</p>
-                    <p style="margin-top: 2rem; color: #555;">We typically respond within 24 hours. Looking forward to hearing from you!</p>
-                </div>
             </div>
         </div>
     </section>
@@ -198,8 +276,9 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h4>EBSS Studio</h4>
+                    <h4>EBSS Web Studio</h4>
                     <p>Premium web design and development for ambitious brands.</p>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: #aaa;">📍 Based in Las Vegas, NV, serving nationwide</p>
                 </div>
                 <div class="footer-section">
                     <h4>Services</h4>
@@ -228,10 +307,10 @@
 
     <!-- Admin Theme Switcher (Hidden by default) -->
     <!-- Access by pressing: Ctrl+Shift+T (or Cmd+Shift+T on Mac) -->
-    <div id="admin-theme-switcher" class="admin-theme-switcher" style="display: none;">
+    <div id="admin-theme-switcher" class="admin-theme-switcher" style="display: none !important;">
         <div class="admin-switcher-header">
             <h3>🎨 Admin Theme Control</h3>
-            <button class="admin-close" onclick="document.getElementById('admin-theme-switcher').style.display='none';">&times;</button>
+            <button class="admin-close" onclick="document.getElementById('admin-theme-switcher').style.display='none !important';">&times;</button>
         </div>
         <div class="admin-switcher-content">
             <button onclick="window.themeManager && window.themeManager.switchTheme('default')" class="theme-btn" title="Default Theme">🎨 Default</button>

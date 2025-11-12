@@ -436,17 +436,18 @@ nav {
 }
 
 .contact-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
-.contact-form {
+.contact-form-centered {
     background: white;
     padding: 2.5rem;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
 }
 
 .form-group {
@@ -473,26 +474,6 @@ nav {
 
 .contact-form button {
     width: 100%;
-}
-
-.contact-info {
-    background: white;
-    padding: 2.5rem;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-.contact-info h3 {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 1.8rem;
-    margin-bottom: 2rem;
-    color: #1a1a1a;
-}
-
-.contact-info p {
-    margin-bottom: 1.5rem;
-    font-size: 1.05rem;
-    color: #555;
 }
 
 /* Footer */

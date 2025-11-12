@@ -3,7 +3,26 @@
  * Features: Smooth scroll, Form handling, Analytics, Theme switching, Mobile optimization
  */
 
-// ========== SMOOTH SCROLL NAVIGATION ==========
+// ========== MOBILE MENU TOGGLE ==========
+function toggleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    if (navLinks) {
+        navLinks.classList.toggle('mobile-open');
+    }
+}
+
+// Close menu when a link is clicked
+document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('.nav-links a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            const menu = document.querySelector('.nav-links');
+            if (menu) {
+                menu.classList.remove('mobile-open');
+            }
+        });
+    });
+});
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         const href = this.getAttribute('href');
@@ -298,7 +317,11 @@ document.addEventListener('keydown', (e) => {
         const switcher = document.getElementById('admin-theme-switcher');
         if (switcher) {
             const isVisible = switcher.style.display !== 'none';
-            switcher.style.display = isVisible ? 'none' : 'block';
+            if (isVisible) {
+                switcher.style.display = 'none !important';
+            } else {
+                switcher.style.display = 'block';
+            }
             console.log(`✅ Admin Theme Panel ${isVisible ? 'Hidden' : 'Shown'}`);
         }
     }
