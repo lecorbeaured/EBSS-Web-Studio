@@ -11,15 +11,19 @@ function toggleMenu() {
     }
 }
 
+function closeMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    if (navLinks) {
+        navLinks.classList.remove('mobile-open');
+    }
+}
+
 // Close menu when a link is clicked
 document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.nav-links a');
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
-            const menu = document.querySelector('.nav-links');
-            if (menu) {
-                menu.classList.remove('mobile-open');
-            }
+            closeMenu();
         });
     });
 });
