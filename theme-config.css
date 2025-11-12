@@ -1,0 +1,124 @@
+/* 
+ * EBSS Web Studio - Theme Configuration
+ * This file contains all theme variables for easy customization
+ * Change these variables to switch themes quickly
+ */
+
+:root {
+    /* ========== COLOR PALETTE ========== */
+    --primary-color: #ee7752;
+    --secondary-color: #e73c7e;
+    --tertiary-color: #23a6d5;
+    --accent-color: #23d5ab;
+    
+    /* Text Colors */
+    --text-dark: #1a1a1a;
+    --text-light: #555;
+    --text-muted: #888;
+    --text-white: #ffffff;
+    
+    /* Background Colors */
+    --bg-white: #ffffff;
+    --bg-light: #f8f9fa;
+    --bg-dark: #1a1a1a;
+    
+    /* Gradient Background */
+    --gradient-bg: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    
+    /* ========== TYPOGRAPHY ========== */
+    --font-primary: 'Poppins', sans-serif;
+    --font-secondary: 'Plus Jakarta Sans', sans-serif;
+    
+    --font-size-h1: 5rem;
+    --font-size-h2: 3rem;
+    --font-size-h3: 1.5rem;
+    --font-size-body: 1rem;
+    
+    /* ========== SPACING ========== */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --spacing-2xl: 6rem;
+    
+    /* ========== BORDER RADIUS ========== */
+    --radius-sm: 10px;
+    --radius-md: 20px;
+    --radius-lg: 40px;
+    --radius-full: 50px;
+    
+    /* ========== SHADOWS ========== */
+    --shadow-sm: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.2);
+    --shadow-primary: 0 10px 30px rgba(231, 60, 126, 0.4);
+    --shadow-primary-lg: 0 15px 40px rgba(231, 60, 126, 0.6);
+    
+    /* ========== TRANSITIONS ========== */
+    --transition-fast: 0.2s ease;
+    --transition-base: 0.3s ease;
+    --transition-slow: 0.5s ease;
+    
+    /* ========== OPACITY ========== */
+    --opacity-light: 0.7;
+    --opacity-lighter: 0.8;
+    --opacity-medium: 0.5;
+    --opacity-semi: 0.3;
+}
+
+/* Alternative Dark Theme */
+body.dark-theme {
+    --text-dark: #f0f0f0;
+    --text-light: #d0d0d0;
+    --text-muted: #909090;
+    --bg-white: #1a1a1a;
+    --bg-light: #2a2a2a;
+    --bg-dark: #0a0a0a;
+    --gradient-bg: linear-gradient(-45deg, #1a3c3e, #2c1b2e, #0d3d5c, #0d4d3e);
+}
+
+/* Minimalist Light Theme */
+body.minimalist-theme {
+    --primary-color: #000000;
+    --secondary-color: #333333;
+    --tertiary-color: #666666;
+    --accent-color: #999999;
+    --gradient-bg: linear-gradient(-45deg, #f5f5f5, #eeeeee, #e8e8e8, #f0f0f0);
+}
+
+/* Ocean Theme */
+body.ocean-theme {
+    --primary-color: #006994;
+    --secondary-color: #0099cc;
+    --tertiary-color: #00ccff;
+    --accent-color: #00ffff;
+    --gradient-bg: linear-gradient(-45deg, #001a33, #003d66, #006994, #0099cc);
+}
+
+/* Sunset Theme */
+body.sunset-theme {
+    --primary-color: #ff6b35;
+    --secondary-color: #f7931e;
+    --tertiary-color: #fbb03b;
+    --accent-color: #ffcc00;
+    --gradient-bg: linear-gradient(-45deg, #ff6b35, #f7931e, #fbb03b, #ffcc00);
+}
+
+/* Forest Theme */
+body.forest-theme {
+    --primary-color: #2d5016;
+    --secondary-color: #388659;
+    --tertiary-color: #7cb342;
+    --accent-color: #9ccc65;
+    --gradient-bg: linear-gradient(-45deg, #2d5016, #388659, #7cb342, #9ccc65);
+}
+
+/* Purple Grape Theme */
+body.grape-theme {
+    --primary-color: #663399;
+    --secondary-color: #9933cc;
+    --tertiary-color: #cc99ff;
+    --accent-color: #dd99ff;
+    --gradient-bg: linear-gradient(-45deg, #663399, #9933cc, #cc99ff, #dd99ff);
+}
