@@ -3,52 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Eric Coste — Digital Products, Tools & Resources</title>
-<meta name="description" content="Eric Coste — founder of EBSS Web Studio. Digital products, AI tools, credit repair guides, astrology tools & web design services. Based in Las Vegas, NV.">
-<meta name="keywords" content="Eric Coste, EBSS Web Studio, digital products, credit repair, web design Las Vegas, AI tools, astrology, SaaS">
-<meta name="author" content="Eric Coste">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://www.ebssweb.com/">
-
-<!-- Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://www.ebssweb.com/">
-<meta property="og:title" content="Eric Coste — Digital Products, Tools & Resources">
-<meta property="og:description" content="Digital products, AI tools, credit repair guides & web design services. Founder of EBSS Web Studio, Las Vegas.">
-<meta property="og:image" content="https://www.ebssweb.com/og-image.png">
-<meta property="og:locale" content="en_US">
-
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Eric Coste — Digital Products, Tools & Resources">
-<meta name="twitter:description" content="Digital products, AI tools, credit repair guides & web design services. Founder of EBSS Web Studio, Las Vegas.">
-<meta name="twitter:image" content="https://www.ebssweb.com/og-image.png">
-
-<!-- Schema.org Person -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Eric Coste",
-  "url": "https://www.ebssweb.com",
-  "jobTitle": "Founder, Web Designer & Developer",
-  "worksFor": {
-    "@type": "Organization",
-    "name": "EBSS Web Studio",
-    "url": "https://www.ebssweb.com"
-  },
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Las Vegas",
-    "addressRegion": "NV",
-    "addressCountry": "US"
-  },
-  "sameAs": [
-    "https://payhip.com/ericcoste",
-    "https://www.ebssweb.com"
-  ]
-}
-</script>
+<title>Eric Coste</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231a1714'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Georgia%2C serif' font-size='13' font-weight='400' fill='%23c45c2c' letter-spacing='0.5'%3EEC%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -841,21 +796,19 @@
   });
 
   // ── Resend config ───────────────────────────────────────────────
-  const RESEND_API_KEY = 'YOUR_RESEND_API_KEY';
-  const FROM_ADDRESS   = 'contact@ebsswebstudio.com';
-  const TO_ADDRESS     = 'eric@ebsswebstudio.com';
-
-  async function sendViaResend(subject, htmlBody, toastEl, submitEl, fieldsToReset) {
+  async function sendViaResend(endpoint, payload, toastEl, submitEl, fieldsToReset) {
     toastEl.className = 'toast';
     submitEl.disabled = true;
     submitEl.classList.add('loading');
 
     try {
-      const res = await fetch('https://api.resend.com/emails', {
+      const res = await fetch(endpoint, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${RESEND_API_KEY}` },
-        body: JSON.stringify({ from: FROM_ADDRESS, to: [TO_ADDRESS], subject, html: htmlBody })
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
       });
+
+      const data = await res.json();
 
       if (res.ok) {
         toastEl.className = 'toast success';
@@ -865,9 +818,8 @@
           el.tagName === 'SELECT' ? el.selectedIndex = 0 : (el.value = '');
         });
       } else {
-        const err = await res.json();
         toastEl.className = 'toast error';
-        toastEl.innerHTML = `❌ ${err.message || 'Something went wrong.'}`;
+        toastEl.innerHTML = `❌ ${data.error || 'Something went wrong.'}`;
       }
     } catch {
       toastEl.className = 'toast error';
@@ -893,8 +845,8 @@
       t.className = 'toast error'; t.innerHTML = '❌ Please enter a valid email.'; return;
     }
     sendViaResend(
-      `[Eric Coste] ${subject} — from ${name}`,
-      `<p><strong>Name:</strong> ${name}</p><p><strong>Email:</strong> ${email}</p><p><strong>Subject:</strong> ${subject}</p><hr><p>${message.replace(/\n/g,'<br>')}</p>`,
+      '/api/contact',
+      { name, email, subject, message },
       document.getElementById('toast'),
       document.getElementById('btn-submit'),
       ['cf-name','cf-email','cf-subject','cf-message']
@@ -917,8 +869,8 @@
       t.className = 'toast error'; t.innerHTML = '❌ Please enter a valid email.'; return;
     }
     sendViaResend(
-      `[EBSS Web Design] New project inquiry from ${name}`,
-      `<p><strong>Name:</strong> ${name}</p><p><strong>Email:</strong> ${email}</p><p><strong>Project type:</strong> ${type}</p><p><strong>Budget:</strong> ${budget}</p><hr><p>${message.replace(/\n/g,'<br>')}</p>`,
+      '/api/webdesign',
+      { name, email, type, budget, message },
       document.getElementById('wd-toast'),
       document.getElementById('wd-submit'),
       ['wd-name','wd-email','wd-type','wd-budget','wd-message']
