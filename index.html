@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eric Coste — Digital Products, Tools & Resources</title>
+<meta name="description" content="Eric Coste — founder of EBSS Web Studio. Digital products, AI tools, credit repair guides, astrology tools & web design services. Based in Las Vegas, NV.">
+<meta name="keywords" content="Eric Coste, EBSS Web Studio, digital products, credit repair, web design Las Vegas, AI tools, astrology, SaaS">
+<meta name="author" content="Eric Coste">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.ebssweb.com/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.ebssweb.com/">
+<meta property="og:title" content="Eric Coste — Digital Products, Tools & Resources">
+<meta property="og:description" content="Digital products, AI tools, credit repair guides & web design services. Founder of EBSS Web Studio, Las Vegas.">
+<meta property="og:image" content="https://www.ebssweb.com/og-image.png">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Eric Coste — Digital Products, Tools & Resources">
+<meta name="twitter:description" content="Digital products, AI tools, credit repair guides & web design services. Founder of EBSS Web Studio, Las Vegas.">
+<meta name="twitter:image" content="https://www.ebssweb.com/og-image.png">
+
+<!-- Schema.org Person -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Eric Coste",
+  "url": "https://www.ebssweb.com",
+  "jobTitle": "Founder, Web Designer & Developer",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "EBSS Web Studio",
+    "url": "https://www.ebssweb.com"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Las Vegas",
+    "addressRegion": "NV",
+    "addressCountry": "US"
+  },
+  "sameAs": [
+    "https://payhip.com/ericcoste",
+    "https://www.ebssweb.com"
+  ]
+}
+</script>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231a1714'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Georgia%2C serif' font-size='13' font-weight='400' fill='%23c45c2c' letter-spacing='0.5'%3EEC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #f7f3ee;
+    --warm: #ede8e1;
+    --ink: #1a1714;
+    --ink-soft: #5a534c;
+    --ink-muted: #a09890;
+    --accent: #c45c2c;
+    --accent-soft: rgba(196, 92, 44, 0.08);
+    --line: #ddd7ce;
+    --white: #ffffff;
+    --success: #16a34a;
+    --error: #dc2626;
+  }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    min-height: 100vh;
+  }
+
+  .page {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 72px 28px 100px;
+  }
+
+  /* Header */
+  .header { margin-bottom: 56px; animation: rise 0.7s ease both; }
+
+  .avatar-wrap { width: 64px; height: 64px; margin-bottom: 24px; position: relative; }
+
+  .avatar-ring {
+    width: 64px; height: 64px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), #e8a47c);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'DM Serif Display', serif; font-size: 24px;
+    color: #fff; letter-spacing: 0.02em;
+  }
+
+  .status-dot {
+    position: absolute; bottom: 2px; right: 2px;
+    width: 12px; height: 12px; background: #4ade80;
+    border-radius: 50%; border: 2px solid var(--cream);
+  }
+
+  .name { font-family: 'DM Serif Display', serif; font-size: 36px; line-height: 1.1; margin-bottom: 6px; }
+  .name em { font-style: italic; color: var(--accent); }
+  .bio { font-size: 14px; color: var(--ink-soft); line-height: 1.6; max-width: 300px; margin-top: 10px; }
+
+  /* Filters */
+  .filters { display: flex; gap: 8px; margin-bottom: 32px; flex-wrap: wrap; animation: rise 0.7s ease 0.15s both; }
+
+  .filter {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.06em;
+    padding: 6px 14px; border-radius: 100px; border: 1px solid var(--line);
+    color: var(--ink-muted); cursor: pointer; background: transparent;
+    transition: all 0.2s; text-transform: uppercase;
+  }
+  .filter.active, .filter:hover { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+
+  /* Cards */
+  .links { display: flex; flex-direction: column; gap: 10px; margin-bottom: 52px; }
+
+  .card {
+    display: flex; align-items: center; gap: 16px; padding: 20px;
+    background: var(--white); border: 1px solid var(--line);
+    text-decoration: none; color: var(--ink); border-radius: 4px;
+    transition: box-shadow 0.25s ease, transform 0.2s ease, border-color 0.2s;
+    animation: rise 0.6s ease both;
+  }
+  .card:hover { box-shadow: 0 8px 32px rgba(26,23,20,0.1); transform: translateY(-2px); border-color: var(--accent); }
+
+  .card-emoji {
+    width: 44px; height: 44px; background: var(--warm); border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; flex-shrink: 0; transition: background 0.2s;
+  }
+  .card:hover .card-emoji { background: var(--accent-soft); }
+
+  .card-body { flex: 1; }
+  .card-title { font-family: 'DM Serif Display', serif; font-size: 16px; margin-bottom: 2px; line-height: 1.3; }
+  .card-sub { font-size: 12px; color: var(--ink-muted); font-weight: 400; }
+
+  .card-meta { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; flex-shrink: 0; }
+  .card-price { font-size: 15px; font-weight: 500; }
+  .card-tag { font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-muted); background: var(--warm); padding: 2px 8px; border-radius: 100px; }
+
+  .card:nth-child(1) { animation-delay: 0.2s; }
+  .card:nth-child(2) { animation-delay: 0.27s; }
+  .card:nth-child(3) { animation-delay: 0.34s; }
+  .card:nth-child(4) { animation-delay: 0.41s; }
+  .card:nth-child(5) { animation-delay: 0.48s; }
+  .card:nth-child(6) { animation-delay: 0.55s; }
+  .card:nth-child(7) { animation-delay: 0.62s; }
+  .card:nth-child(8) { animation-delay: 0.69s; }
+  .card:nth-child(9) { animation-delay: 0.76s; }
+  .card:nth-child(10) { animation-delay: 0.83s; }
+  .card:nth-child(11) { animation-delay: 0.90s; }
+
+  /* Button-as-card reset */
+  .card-btn {
+    width: 100%; text-align: left; cursor: pointer;
+    font-family: 'DM Sans', sans-serif; font-weight: 300;
+  }
+
+  /* Remove default button border from social bar contact btn */
+  button.social-link {
+    border: none;
+    border-right: 1px solid var(--line);
+  }
+
+  /* Social row */
+  .social {
+    display: flex; border: 1px solid var(--line); border-radius: 4px;
+    overflow: hidden; animation: rise 0.7s ease 0.75s both;
+  }
+  .social-link {
+    flex: 1; display: flex; align-items: center; justify-content: center;
+    gap: 8px; padding: 14px; text-decoration: none; color: var(--ink-soft);
+    font-size: 11px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
+    border-right: 1px solid var(--line); transition: background 0.2s, color 0.2s; cursor: pointer;
+    background: transparent;
+  }
+  .social-link:last-child { border-right: none; }
+  .social-link:hover { background: var(--ink); color: var(--cream); }
+  .social-icon { font-size: 14px; }
+
+  /* Footer */
+  .footer { margin-top: 40px; text-align: center; animation: rise 0.7s ease 0.9s both; }
+  .footer-text { font-size: 11px; color: var(--ink-muted); letter-spacing: 0.1em; }
+
+  /* ── Modal overlay ── */
+  .modal-overlay {
+    position: fixed; inset: 0;
+    background: rgba(26, 23, 20, 0.55);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    display: flex; align-items: center; justify-content: center;
+    padding: 24px;
+    z-index: 1000;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.25s ease;
+  }
+  .modal-overlay.open { opacity: 1; pointer-events: all; }
+
+  .modal {
+    background: var(--white);
+    border-radius: 8px;
+    width: 100%; max-width: 420px;
+    padding: 36px 32px 32px;
+    position: relative;
+    transform: translateY(16px) scale(0.98);
+    transition: transform 0.28s ease;
+    box-shadow: 0 24px 64px rgba(26,23,20,0.18);
+  }
+  .modal-overlay.open .modal { transform: translateY(0) scale(1); }
+
+  .modal-close {
+    position: absolute; top: 16px; right: 18px;
+    background: none; border: none; cursor: pointer;
+    font-size: 20px; color: var(--ink-muted); line-height: 1;
+    transition: color 0.15s;
+    padding: 4px;
+  }
+  .modal-close:hover { color: var(--ink); }
+
+  .modal-eyebrow {
+    font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 8px; font-weight: 500;
+  }
+
+  .modal-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 26px; line-height: 1.15;
+    margin-bottom: 6px;
+  }
+
+  .modal-sub {
+    font-size: 13px; color: var(--ink-soft); line-height: 1.55;
+    margin-bottom: 28px;
+  }
+
+  /* Form fields */
+  .field { margin-bottom: 16px; }
+
+  .field label {
+    display: block; font-size: 11px; font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--ink-soft); margin-bottom: 6px;
+  }
+
+  .field input,
+  .field textarea,
+  .field select {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    appearance: none;
+    resize: none;
+  }
+
+  .field input:focus,
+  .field textarea:focus,
+  .field select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-soft);
+    background: var(--white);
+  }
+
+  .field textarea { height: 100px; }
+
+  .field select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23a09890' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 36px;
+    cursor: pointer;
+  }
+
+  .field-row { display: flex; gap: 12px; }
+  .field-row .field { flex: 1; margin-bottom: 0; }
+  .field-row { margin-bottom: 16px; }
+
+  /* Submit button */
+  .btn-submit {
+    width: 100%; padding: 14px;
+    background: var(--ink); color: var(--cream);
+    border: none; border-radius: 4px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px; font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    cursor: pointer; margin-top: 8px;
+    transition: background 0.2s, transform 0.1s;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+  }
+  .btn-submit:hover { background: var(--accent); }
+  .btn-submit:active { transform: scale(0.99); }
+  .btn-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+
+  /* Spinner */
+  .spinner {
+    width: 14px; height: 14px;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+    display: none;
+  }
+  .loading .spinner { display: block; }
+  .loading .btn-label { display: none; }
+
+  /* Toast */
+  .toast {
+    display: none;
+    align-items: center; gap: 10px;
+    margin-top: 14px; padding: 12px 16px;
+    border-radius: 4px; font-size: 13px; font-weight: 400;
+  }
+  .toast.success { display: flex; background: #f0fdf4; color: var(--success); border: 1px solid #bbf7d0; }
+  .toast.error   { display: flex; background: #fef2f2; color: var(--error);   border: 1px solid #fecaca; }
+  .toast-icon { font-size: 16px; }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+
+  /* ── Web design modal extras ── */
+  .modal-wide { max-width: 480px; }
+
+  .wd-pitch p {
+    font-size: 14px; color: var(--ink-soft); line-height: 1.65;
+    margin-bottom: 18px;
+  }
+
+  .wd-pills {
+    display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px;
+  }
+
+  .wd-pill {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.04em;
+    padding: 5px 12px; border-radius: 100px;
+    background: var(--warm); color: var(--ink-soft);
+    border: 1px solid var(--line);
+  }
+
+  .wd-stats {
+    display: flex; gap: 0;
+    border: 1px solid var(--line); border-radius: 4px; overflow: hidden;
+    margin-bottom: 4px;
+  }
+
+  .wd-stat {
+    flex: 1; display: flex; flex-direction: column; align-items: center;
+    padding: 12px 8px; border-right: 1px solid var(--line);
+  }
+  .wd-stat:last-child { border-right: none; }
+
+  .wd-stat-num {
+    font-family: 'DM Serif Display', serif; font-size: 22px;
+    color: var(--accent); line-height: 1; margin-bottom: 2px;
+  }
+
+  .wd-stat-label {
+    font-size: 10px; color: var(--ink-muted);
+    letter-spacing: 0.08em; text-transform: uppercase;
+  }
+
+  .wd-divider {
+    height: 1px; background: var(--line); margin: 24px 0 20px;
+  }
+
+  /* ── Vegas modal ── */
+  .vegas-links {
+    display: flex; flex-direction: column; gap: 8px; margin-top: 4px;
+  }
+
+  .vegas-card {
+    display: flex; align-items: center; gap: 14px;
+    padding: 14px 16px;
+    border: 1px solid var(--line); border-radius: 4px;
+    text-decoration: none; color: var(--ink);
+    background: var(--cream);
+    transition: border-color 0.2s, background 0.2s, transform 0.2s;
+  }
+
+  .vegas-card:hover {
+    border-color: var(--accent);
+    background: var(--accent-soft);
+    transform: translateX(3px);
+  }
+
+  .vegas-card:hover .vegas-arrow { color: var(--accent); }
+
+  .vegas-card-icon {
+    font-size: 22px; width: 36px; text-align: center; flex-shrink: 0;
+  }
+
+  .vegas-card-body { flex: 1; }
+
+  .vegas-card-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 15px; margin-bottom: 2px; line-height: 1.2;
+  }
+
+  .vegas-card-sub {
+    font-size: 11px; color: var(--ink-muted); font-weight: 400;
+  }
+
+  .vegas-arrow {
+    font-size: 16px; color: var(--ink-muted);
+    transition: color 0.2s; flex-shrink: 0;
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <div class="header">
+    <div class="avatar-wrap">
+      <div class="avatar-ring">EC</div>
+      <div class="status-dot"></div>
+    </div>
+    <h1 class="name">Eric <em>Coste</em></h1>
+    <p class="bio">Digital products, AI tools & financial resources. Builder, founder, EBSS Web Studio.</p>
+  </div>
+
+  <div class="filters">
+    <button class="filter active">All</button>
+    <button class="filter">Guides</button>
+    <button class="filter">SaaS</button>
+    <button class="filter">Free Tools</button>
+  </div>
+
+  <div class="links">
+    <a class="card" href="https://getcreditrepairguide.online" target="_blank">
+      <div class="card-emoji">📄</div>
+      <div class="card-body">
+        <div class="card-title">Fix Your Credit Step-by-Step</div>
+        <div class="card-sub">The complete credit repair PDF guide</div>
+      </div>
+      <div class="card-meta">
+        <span class="card-price">$17</span>
+        <span class="card-tag">Guide</span>
+      </div>
+    </a>
+
+    <a class="card" href="#" target="_blank">
+      <div class="card-emoji">🏛️</div>
+      <div class="card-body">
+        <div class="card-title">GovCon Scanner</div>
+        <div class="card-sub">SAM.gov search + GPT-4 proposal generator</div>
+      </div>
+      <div class="card-meta">
+        <span class="card-price">SaaS</span>
+        <span class="card-tag">Platform</span>
+      </div>
+    </a>
+
+    <a class="card" href="#" target="_blank">
+      <div class="card-emoji">🐟</div>
+      <div class="card-body">
+        <div class="card-title">MiroFish Query Lab</div>
+        <div class="card-sub">AI-powered research tool — free to start</div>
+      </div>
+      <div class="card-meta">
+        <span class="card-price">Free</span>
+        <span class="card-tag">SaaS</span>
+      </div>
+    </a>
+
+    <a class="card" href="https://parseur10x.live" target="_blank">
+      <div class="card-emoji">📬</div>
+      <div class="card-body">
+        <div class="card-title">Parseur 10X Guide</div>
+        <div class="card-sub">Master email parsing & automation</div>
+      </div>
+      <div class="card-meta">
+        <span class="card-price">$17</span>
+        <span class="card-tag">Guide</span>
+      </div>
+    </a>
+
+    <a class="card" href="https://oracelis.app" target="_blank">
+      <div class="card-emoji">🌙</div>
+      <div class="card-body">
+        <div class="card-title">ORACELIS Astrology Suite</div>
+        <div class="card-sub">Planetary hours, moon phases & more</div>
+      </div>
+      <div class="card-meta">
+        <span class="card-price">Free</span>
+        <span class="card-tag">Tools</span>
+      </div>
+    </a>
+
+    <a class="card" href="https://fixopenclawratelimits.com" target="_blank">
+      <div class="card-emoji">⚡</div>
+      <div class="card-body">
+        <div class="card-title">Fix OpenClaw Rate Limits</div>
+        <div class="card-sub">Claude Code optimization guide</div>
+      </div>
+      <div class="card-meta">
+        <span class="card-price">$19</span>
+        <span class="card-tag">Guide</span>
+      </div>
+    </a>
+
+    <a class="card" href="https://kikoff.pxf.io/c/7007975/2344833/14994" target="_blank">
+      <div class="card-emoji">💳</div>
+      <div class="card-body">
+        <div class="card-title">Build Credit with Kikoff</div>
+        <div class="card-sub">No hard pull · Start building credit today</div>
+      </div>
+      <div class="card-meta">
+        <span class="card-price">Free</span>
+        <span class="card-tag">Affiliate</span>
+      </div>
+    </a>
+
+    <a class="card" href="https://www.identityiq.com/sc-securemax.aspx?offercode=431297RY" target="_blank">
+      <div class="card-emoji">🛡️</div>
+      <div class="card-body">
+        <div class="card-title">IdentityIQ Credit Monitoring</div>
+        <div class="card-sub">3-bureau monitoring · identity theft protection</div>
+      </div>
+      <div class="card-meta">
+        <span class="card-price">Try it</span>
+        <span class="card-tag">Affiliate</span>
+      </div>
+    </a>
+
+    <a class="card" href="https://focusfuel.live" target="_blank">
+      <div class="card-emoji">📦</div>
+      <div class="card-body">
+        <div class="card-title">Amazon Storefront</div>
+        <div class="card-sub">My hand-picked product recommendations</div>
+      </div>
+      <div class="card-meta">
+        <span class="card-price">Shop</span>
+        <span class="card-tag">Amazon</span>
+      </div>
+    </a>
+
+    <a class="card" href="https://www.ericcoste.com" target="_blank">
+      <div class="card-emoji">📚</div>
+      <div class="card-body">
+        <div class="card-title">Eric Coste — Author Site</div>
+        <div class="card-sub">eBook showcase & author portfolio</div>
+      </div>
+      <div class="card-meta">
+        <span class="card-price">Visit</span>
+        <span class="card-tag">Website</span>
+      </div>
+    </a>
+
+    <button class="card card-btn" id="open-webdesign" type="button">
+      <div class="card-emoji">🖥️</div>
+      <div class="card-body">
+        <div class="card-title">Web Design & Development</div>
+        <div class="card-sub">Custom sites, SaaS builds & full-stack apps</div>
+      </div>
+      <div class="card-meta">
+        <span class="card-price">Hire</span>
+        <span class="card-tag">Services</span>
+      </div>
+    </button>
+
+    <button class="card card-btn" id="open-vegas" type="button">
+      <div class="card-emoji">🎰</div>
+      <div class="card-body">
+        <div class="card-title">Las Vegas</div>
+        <div class="card-sub">Guides, attractions & travel resources</div>
+      </div>
+      <div class="card-meta">
+        <span class="card-price">Explore</span>
+        <span class="card-tag">Travel</span>
+      </div>
+    </button>
+  </div>
+
+  <div class="social">
+    <a class="social-link" href="https://payhip.com/ericcoste" target="_blank">
+      <span class="social-icon">🛒</span> Payhip
+    </a>
+    <a class="social-link" href="https://www.ebssweb.com" target="_blank">
+      <span class="social-icon">🌐</span> EBSS
+    </a>
+    <!-- Contact trigger -->
+    <button class="social-link" id="open-contact" type="button">
+      <span class="social-icon">✉️</span> Contact
+    </button>
+  </div>
+
+  <div class="footer">
+    <p class="footer-text">© Eric Coste · EBSS Web Studio · Las Vegas</p>
+  </div>
+
+</div>
+
+<!-- ── Contact Modal ── -->
+<div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-heading">
+  <div class="modal">
+    <button class="modal-close" id="modal-close" aria-label="Close">✕</button>
+
+    <p class="modal-eyebrow">Get in touch</p>
+    <h2 class="modal-title" id="modal-heading">Let's talk.</h2>
+    <p class="modal-sub">Have a question about a product, a collab idea, or just want to say hi? I'll get back within 24 hours.</p>
+
+    <div class="field-row">
+      <div class="field">
+        <label for="cf-name">Name</label>
+        <input type="text" id="cf-name" placeholder="Your name" autocomplete="name">
+      </div>
+      <div class="field">
+        <label for="cf-email">Email</label>
+        <input type="email" id="cf-email" placeholder="you@example.com" autocomplete="email">
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="cf-subject">Subject</label>
+      <select id="cf-subject">
+        <option value="">Select a topic…</option>
+        <option value="Product question">Product question</option>
+        <option value="Collaboration">Collaboration / partnership</option>
+        <option value="Custom work">Custom web / dev work</option>
+        <option value="Affiliate">Affiliate inquiry</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="cf-message">Message</label>
+      <textarea id="cf-message" placeholder="Tell me what's on your mind…"></textarea>
+    </div>
+
+    <button class="btn-submit" id="btn-submit" type="button">
+      <span class="btn-label">Send Message</span>
+      <span class="spinner"></span>
+    </button>
+
+    <div class="toast" id="toast"></div>
+  </div>
+</div>
+
+<!-- ── Web Design Modal ── -->
+<div class="modal-overlay" id="wd-overlay" role="dialog" aria-modal="true" aria-labelledby="wd-heading">
+  <div class="modal modal-wide">
+    <button class="modal-close" id="wd-close" aria-label="Close">✕</button>
+
+    <!-- Pitch section -->
+    <p class="modal-eyebrow">EBSS Web Studio · Las Vegas</p>
+    <h2 class="modal-title" id="wd-heading">Sites that work as hard as you do.</h2>
+
+    <div class="wd-pitch">
+      <p>I build fast, conversion-focused websites and full-stack applications — from sleek landing pages to complex SaaS platforms. Every project ships with clean code, mobile-first design, and SEO baked in from day one.</p>
+
+      <div class="wd-pills">
+        <span class="wd-pill">⚡ Landing Pages</span>
+        <span class="wd-pill">🛒 eCommerce</span>
+        <span class="wd-pill">🤖 SaaS & AI Tools</span>
+        <span class="wd-pill">🔌 API Integrations</span>
+        <span class="wd-pill">📈 SEO & AEO</span>
+        <span class="wd-pill">🚀 Railway · Netlify</span>
+      </div>
+
+      <div class="wd-stats">
+        <div class="wd-stat">
+          <span class="wd-stat-num">50+</span>
+          <span class="wd-stat-label">Sites built</span>
+        </div>
+        <div class="wd-stat">
+          <span class="wd-stat-num">48h</span>
+          <span class="wd-stat-label">Avg turnaround</span>
+        </div>
+        <div class="wd-stat">
+          <span class="wd-stat-num">100%</span>
+          <span class="wd-stat-label">Custom code</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="wd-divider"></div>
+
+    <!-- Form -->
+    <p class="modal-eyebrow" style="margin-bottom:14px;">Tell me about your project</p>
+
+    <div class="field-row">
+      <div class="field">
+        <label for="wd-name">Name</label>
+        <input type="text" id="wd-name" placeholder="Your name" autocomplete="name">
+      </div>
+      <div class="field">
+        <label for="wd-email">Email</label>
+        <input type="email" id="wd-email" placeholder="you@example.com" autocomplete="email">
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="wd-type">What do you need?</label>
+      <select id="wd-type">
+        <option value="">Select project type…</option>
+        <option value="Landing page">Landing page</option>
+        <option value="Full website">Full website / multi-page</option>
+        <option value="SaaS / web app">SaaS / web app</option>
+        <option value="eCommerce">eCommerce store</option>
+        <option value="API / backend">API / backend integration</option>
+        <option value="Redesign">Redesign existing site</option>
+        <option value="Other">Other / not sure yet</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="wd-budget">Budget range</label>
+      <select id="wd-budget">
+        <option value="">Select budget…</option>
+        <option value="Under $500">Under $500</option>
+        <option value="$500–$1,500">$500 – $1,500</option>
+        <option value="$1,500–$5,000">$1,500 – $5,000</option>
+        <option value="$5,000+">$5,000+</option>
+        <option value="Let's discuss">Let's discuss</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="wd-message">Tell me more</label>
+      <textarea id="wd-message" placeholder="Describe your project, timeline, or any specific requirements…"></textarea>
+    </div>
+
+    <button class="btn-submit" id="wd-submit" type="button">
+      <span class="btn-label">Send Project Brief</span>
+      <span class="spinner"></span>
+    </button>
+
+    <div class="toast" id="wd-toast"></div>
+  </div>
+</div>
+
+<!-- ── Las Vegas Modal ── -->
+<div class="modal-overlay" id="vegas-overlay" role="dialog" aria-modal="true" aria-labelledby="vegas-heading">
+  <div class="modal">
+    <button class="modal-close" id="vegas-close" aria-label="Close">✕</button>
+
+    <p class="modal-eyebrow">🎰 Las Vegas, Nevada</p>
+    <h2 class="modal-title" id="vegas-heading">Explore the city.</h2>
+    <p class="modal-sub">Hand-picked guides to help you get the most out of Las Vegas — from the Strip to Fremont and everything in between.</p>
+
+    <div class="vegas-links">
+
+      <a class="vegas-card" href="https://vegasstripguide.site" target="_blank">
+        <div class="vegas-card-icon">🏙️</div>
+        <div class="vegas-card-body">
+          <div class="vegas-card-title">Vegas Strip Guide</div>
+          <div class="vegas-card-sub">The ultimate Strip walkthrough</div>
+        </div>
+        <span class="vegas-arrow">→</span>
+      </a>
+
+      <a class="vegas-card" href="https://fremontattractions.site" target="_blank">
+        <div class="vegas-card-icon">✨</div>
+        <div class="vegas-card-body">
+          <div class="vegas-card-title">Fremont Attractions</div>
+          <div class="vegas-card-sub">Old Vegas, reimagined</div>
+        </div>
+        <span class="vegas-arrow">→</span>
+      </a>
+
+      <a class="vegas-card" href="https://vegasnightattractions.site" target="_blank">
+        <div class="vegas-card-icon">🌃</div>
+        <div class="vegas-card-body">
+          <div class="vegas-card-title">Vegas Night Attractions</div>
+          <div class="vegas-card-sub">Nightlife, shows & after-dark picks</div>
+        </div>
+        <span class="vegas-arrow">→</span>
+      </a>
+
+      <a class="vegas-card" href="https://getraveready.live" target="_blank">
+        <div class="vegas-card-icon">🎶</div>
+        <div class="vegas-card-body">
+          <div class="vegas-card-title">Get Rave Ready</div>
+          <div class="vegas-card-sub">Festival & EDM event guide</div>
+        </div>
+        <span class="vegas-arrow">→</span>
+      </a>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  // ── Contact Modal ───────────────────────────────────────────────
+  const overlay  = document.getElementById('modal-overlay');
+  const openBtn  = document.getElementById('open-contact');
+  const closeBtn = document.getElementById('modal-close');
+
+  function openModal() { overlay.classList.add('open'); document.body.style.overflow = 'hidden'; }
+  function closeModal() { overlay.classList.remove('open'); document.body.style.overflow = ''; }
+
+  openBtn.addEventListener('click', openModal);
+  closeBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', (e) => { if (e.target === overlay) closeModal(); });
+
+  // ── Web Design Modal ────────────────────────────────────────────
+  const wdOverlay  = document.getElementById('wd-overlay');
+  const wdOpenBtn  = document.getElementById('open-webdesign');
+  const wdCloseBtn = document.getElementById('wd-close');
+
+  function openWdModal()  { wdOverlay.classList.add('open'); document.body.style.overflow = 'hidden'; }
+  function closeWdModal() { wdOverlay.classList.remove('open'); document.body.style.overflow = ''; }
+
+  wdOpenBtn.addEventListener('click', openWdModal);
+  wdCloseBtn.addEventListener('click', closeWdModal);
+  wdOverlay.addEventListener('click', (e) => { if (e.target === wdOverlay) closeWdModal(); });
+
+  // ── Las Vegas Modal ─────────────────────────────────────────────
+  const vegasOverlay  = document.getElementById('vegas-overlay');
+  const vegasOpenBtn  = document.getElementById('open-vegas');
+  const vegasCloseBtn = document.getElementById('vegas-close');
+
+  function openVegasModal()  { vegasOverlay.classList.add('open'); document.body.style.overflow = 'hidden'; }
+  function closeVegasModal() { vegasOverlay.classList.remove('open'); document.body.style.overflow = ''; }
+
+  vegasOpenBtn.addEventListener('click', openVegasModal);
+  vegasCloseBtn.addEventListener('click', closeVegasModal);
+  vegasOverlay.addEventListener('click', (e) => { if (e.target === vegasOverlay) closeVegasModal(); });
+
+  // Shared Escape key handler
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') { closeModal(); closeWdModal(); closeVegasModal(); }
+  });
+
+  // ── Resend config ───────────────────────────────────────────────
+  const RESEND_API_KEY = 'YOUR_RESEND_API_KEY';
+  const FROM_ADDRESS   = 'contact@ebsswebstudio.com';
+  const TO_ADDRESS     = 'eric@ebsswebstudio.com';
+
+  async function sendViaResend(subject, htmlBody, toastEl, submitEl, fieldsToReset) {
+    toastEl.className = 'toast';
+    submitEl.disabled = true;
+    submitEl.classList.add('loading');
+
+    try {
+      const res = await fetch('https://api.resend.com/emails', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${RESEND_API_KEY}` },
+        body: JSON.stringify({ from: FROM_ADDRESS, to: [TO_ADDRESS], subject, html: htmlBody })
+      });
+
+      if (res.ok) {
+        toastEl.className = 'toast success';
+        toastEl.innerHTML = '✅ Sent! I\'ll be in touch within 24 hours.';
+        fieldsToReset.forEach(id => {
+          const el = document.getElementById(id);
+          el.tagName === 'SELECT' ? el.selectedIndex = 0 : (el.value = '');
+        });
+      } else {
+        const err = await res.json();
+        toastEl.className = 'toast error';
+        toastEl.innerHTML = `❌ ${err.message || 'Something went wrong.'}`;
+      }
+    } catch {
+      toastEl.className = 'toast error';
+      toastEl.innerHTML = '❌ Network error. Please try again.';
+    } finally {
+      submitEl.disabled = false;
+      submitEl.classList.remove('loading');
+    }
+  }
+
+  // Contact form submit
+  document.getElementById('btn-submit').addEventListener('click', () => {
+    const name    = document.getElementById('cf-name').value.trim();
+    const email   = document.getElementById('cf-email').value.trim();
+    const subject = document.getElementById('cf-subject').value;
+    const message = document.getElementById('cf-message').value.trim();
+    if (!name || !email || !subject || !message) {
+      const t = document.getElementById('toast');
+      t.className = 'toast error'; t.innerHTML = '❌ Please fill in all fields.'; return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      const t = document.getElementById('toast');
+      t.className = 'toast error'; t.innerHTML = '❌ Please enter a valid email.'; return;
+    }
+    sendViaResend(
+      `[Eric Coste] ${subject} — from ${name}`,
+      `<p><strong>Name:</strong> ${name}</p><p><strong>Email:</strong> ${email}</p><p><strong>Subject:</strong> ${subject}</p><hr><p>${message.replace(/\n/g,'<br>')}</p>`,
+      document.getElementById('toast'),
+      document.getElementById('btn-submit'),
+      ['cf-name','cf-email','cf-subject','cf-message']
+    );
+  });
+
+  // Web design form submit
+  document.getElementById('wd-submit').addEventListener('click', () => {
+    const name    = document.getElementById('wd-name').value.trim();
+    const email   = document.getElementById('wd-email').value.trim();
+    const type    = document.getElementById('wd-type').value;
+    const budget  = document.getElementById('wd-budget').value;
+    const message = document.getElementById('wd-message').value.trim();
+    if (!name || !email || !type || !budget || !message) {
+      const t = document.getElementById('wd-toast');
+      t.className = 'toast error'; t.innerHTML = '❌ Please fill in all fields.'; return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      const t = document.getElementById('wd-toast');
+      t.className = 'toast error'; t.innerHTML = '❌ Please enter a valid email.'; return;
+    }
+    sendViaResend(
+      `[EBSS Web Design] New project inquiry from ${name}`,
+      `<p><strong>Name:</strong> ${name}</p><p><strong>Email:</strong> ${email}</p><p><strong>Project type:</strong> ${type}</p><p><strong>Budget:</strong> ${budget}</p><hr><p>${message.replace(/\n/g,'<br>')}</p>`,
+      document.getElementById('wd-toast'),
+      document.getElementById('wd-submit'),
+      ['wd-name','wd-email','wd-type','wd-budget','wd-message']
+    );
+  });
+
+  // ── Filter tabs ─────────────────────────────────────────────────
+  document.querySelectorAll('.filter').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
